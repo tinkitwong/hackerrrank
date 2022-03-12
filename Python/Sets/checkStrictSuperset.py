@@ -13,3 +13,19 @@ A strict superset has at least one element that does not exist in its subset.
 Ans = False
 """
 
+set_A = set(map(int, input().split()))
+n = int(input()) # number of elements of other sets
+output = True
+
+for _ in range(n):
+    set_other = set(map(int, input().split()))
+    # check if set_A is a strict superset of set_other
+    if not set_A.issuperset(set_other) or len(set_A) - len(set_other) == 0:
+        output = False
+        break
+        
+print(output)
+        
+
+
+# print(sum([(i in set_A) - (i in set_B) for i in arr]))
